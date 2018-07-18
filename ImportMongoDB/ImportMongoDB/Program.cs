@@ -12,9 +12,11 @@ namespace ImportMongoDB
         static async Task Main(string[] args)
         {
           
-            var localDatabase = new MongoClient("mongodb://localhost:27017").GetDatabase("customerarea");
+            var localDatabase = new MongoClient("mongodb://localhost:27017")
+                                .GetDatabase("customerarea");
 
-            var azureDatabase = new MongoClient("mongodb://localhost:27017").GetDatabase("coredb");
+            var azureDatabase = new MongoClient("mongodb://localhost:27017")
+                                .GetDatabase("coredb");
 
             var collectionNames = new List<string> { "AccountAndUser","CommonData","Part","Quote","UserData" };
 
